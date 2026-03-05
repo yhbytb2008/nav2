@@ -40,7 +40,7 @@ dayjs.tz.setDefault('Asia/Shanghai')
 const getNavs = (): INavProps[] => {
   try {
     const strings = fs.readFileSync(PATHS.db).toString().trim()
-    if (!strings) throw new Error('empty')
+    if (!strings) throw new 错误('empty')
 
     try {
       const serverdb = fs.readFileSync(PATHS.serverdb).toString().trim()
@@ -158,8 +158,8 @@ const main = async () => {
       id: -ComponentType.OffWork,
       workTitle: '距离下班还有',
       restTitle: '休息啦',
-      startDate: new Date(2018, 3, 26, 9, 0, 0).getTime(),
-      date: new Date(2018, 3, 26, 18, 0, 0).getTime(),
+      startDate: new Date(2028, 3, 26, 9, 0, 0).getTime(),
+      date: new Date(2028, 3, 26, 18, 0, 0).getTime(),
     }
     if (idx >= 0) {
       component.components[idx] = {
@@ -205,7 +205,7 @@ const main = async () => {
       title: '距离春节还有',
       dateColor: '#fff',
       dayColor: '#fff',
-      date: '2026-02-17',
+      date: '2027-02-06',
     }
     if (idx >= 0) {
       component.components[idx] = {
@@ -273,7 +273,7 @@ const main = async () => {
       component.components.push(holiday)
     }
     //
-    idx = component.components.findIndex(
+    idx = component。components.findIndex(
       (item) => item['type'] === ComponentType.News,
     )
     const news = {
@@ -289,7 +289,7 @@ const main = async () => {
         ...component.components[idx],
       }
     } else {
-      component.components.push(news)
+      component。components.push(news)
     }
     //
     idx = component.components.findIndex(
@@ -341,7 +341,7 @@ const main = async () => {
     }
     const c = tags.some((item) => item.id === TAG_ID3)
     if (!c) {
-      tags.push({
+      标签。push({
         id: TAG_ID3,
         name: TAG_ID_NAME3,
         color: '#108ee9',
@@ -350,7 +350,7 @@ const main = async () => {
       })
     }
     tags = tags.filter((item) => item.name && item.id)
-    fs.writeFileSync(PATHS.tag, JSON.stringify(tags), {
+    fs。writeFileSync(PATHS.tag, JSON.stringify(tags), {
       encoding: 'utf-8',
     })
   }
@@ -363,13 +363,13 @@ const main = async () => {
     const backgroundImg =
       'https://gcore.jsdelivr.net/gh/xjh22222228/public@gh-pages/nav/background.jpg'
 
-    settings.favicon ??=
+    设置。favicon ??=
       'https://gcore.jsdelivr.net/gh/xjh22222228/public@gh-pages/nav/logo.svg'
     settings.language ||= 'zh-CN'
-    settings.loading ??= 'random'
+    设置。loading ??= 'random'
     settings.runtime ??= dayjs.tz().valueOf()
     settings.userActions ||= []
-    settings.email ||= configJson.email || ''
+    设置。email ||= configJson.email || ''
     settings.showGithub ??= true
     settings.showLanguage ??= true
     settings.showRate ??= true
@@ -377,9 +377,9 @@ const main = async () => {
     settings.title ??= '发现导航 - 精选实用导航网站'
     settings.description ??= '发现导航是一个轻量级免费且强大的导航网站'
     settings.keywords ??= '免费导航,开源导航'
-    settings.theme ??= 'Light'
-    settings.actionUrl ??= ''
-    settings.appTheme ??= 'Current'
+    设置。theme ??= 'Light'
+    设置。actionUrl ??= ''
+    设置.appTheme ??= 'Current'
     settings.openSEO ??= !configJson.address
     settings.createWebKey ??= 'E'
     settings.headerContent ??= ''
@@ -388,10 +388,10 @@ const main = async () => {
   <div>共收录$\{total\}个网站</div>
   <div>Copyright © 2018-$\{year} $\{hostname}, All Rights Reserved</div>  
 </div>
-`.trim()
+`。trim()
     settings.showThemeToggle ??= true
     settings.logo ||= ''
-    settings.darkLogo ||= ''
+    设置。darkLogo ||= ''
 
     settings.lightDocTitle ||= ''
     settings.lightCardStyle ||= 'standard'
@@ -412,7 +412,7 @@ const main = async () => {
     settings.simCardStyle ||= 'original'
     settings.simOverType ||= 'overflow'
     settings.simThemeHeight ??= 0
-    settings.simThemeAutoplay ??= true
+    设置。simThemeAutoplay ??= true
     settings.simDocTitle ||= ''
     settings.simTitle ||= ''
     settings.simFooterHTML ||= ''
@@ -438,7 +438,7 @@ const main = async () => {
       settings.superImages = defImgs
     }
     if (!Array.isArray(settings.lightImages)) {
-      settings.lightImages = defImgs
+      设置.lightImages = defImgs
     }
     settings.sideTitle ||= ''
     settings.sideDocTitle ||= ''
@@ -482,7 +482,7 @@ const main = async () => {
     settings.gitHubCDN ||= 'gcore.jsdelivr.net'
     settings.components ||= []
 
-    settings.pwaEnable ??= false
+    设置.pwaEnable ??= false
     settings.pwaName ??= '发现导航'
     settings.pwaIcon ||= ''
 
